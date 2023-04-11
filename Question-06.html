@@ -1,0 +1,49 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./Question-06.js" defer></script>
+    <title>Question-06</title>
+    
+</head>
+<body>
+    
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Save Object to Local Storage</title>
+  </head>
+  <body>
+    <form id="myForm">
+      <label for="keyInput">Key:</label>
+      <input type="text" id="keyInput" name="key"><br><br>
+      <label for="valueInput">Value:</label>
+      <textarea id="valueInput" name="value"></textarea><br><br>
+      <input type="button" value="Submit" onclick="saveObject()">
+    </form>
+    <script>
+      function saveObject() {
+        // Get the input values
+        var key = document.getElementById("keyInput").value;
+        var value = document.getElementById("valueInput").value;
+        
+        // Parse the value as JSON
+        var parsedValue = JSON.parse(value);
+        
+        // Save the object to localStorage
+        localStorage.setItem(key, JSON.stringify(parsedValue));
+        
+        // Show a confirmation message
+        alert("Object saved to localStorage!");
+        
+        // Clear the form
+        document.getElementById("myForm").reset();
+      }
+    </script>
+  </body>
+</html>
